@@ -1,6 +1,6 @@
 let buffer = "0";
 let runningTotal = 0; //save running number in background
-let previousOperator = null; // to track the previous operator
+let previousOperator = null; // to track the previous operator, don't need to use null here
 
 const screen = document.querySelector(".screen");
 
@@ -47,7 +47,7 @@ function handleSymbol (symbol) {
             flushOperation(parseInt(buffer));
             console.log("runningTotal middle", runningTotal)
             previousOperator = null;
-            buffer = "" + runningTotal;
+            buffer = "" + runningTotal; //trick!!! make it string
             console.log("runningTotal after", runningTotal)
 
             // runningTotal = 0;            
