@@ -1,5 +1,6 @@
 let buffer = "0";
-// let screenNumber = screen.innerText;
+let runningTotal = 0; //save running number in background
+let previousOperator = null; // to track the previous operator
 
 const screen = document.querySelector(".screen");
 
@@ -27,6 +28,7 @@ function handleSymbol (symbol) {
     switch (symbol) {
         case 'C':
             buffer = "0";
+            runningTotal = 0;
             break;
         case '←':
             if (buffer.length === 1) {
@@ -37,7 +39,18 @@ function handleSymbol (symbol) {
             break;
         case "=":
             console.log("equals");
-            break;
+            if (previousOperator === null) {
+                // need do numbers to do math
+                return;
+            } 
+            console.log("runningTotal before", runningTotal)
+            flushOperation(parseInt(buffer));
+            console.log("runningTotal middle", runningTotal)
+            previousOperator = null;
+            buffer = "" + runningTotal;
+            console.log("runningTotal after", runningTotal)
+
+            // runningTotal = 0;            
         case "÷" :
         case "×" :
         case "-" :
@@ -52,6 +65,27 @@ function handleMath (value) {
     if (buffer === "0") {
         //do nothing
         return;
+    }
+    const intBuffer = parseInt(buffer);
+    if (runningTotal === 0) {
+        runningTotal = intBuffer;
+    } else {
+        flushOperation(intBuffer);
+    }
+    previousOperator = value; 
+    buffer = "0"; //clearn screen
+    console.log(runningTotal);
+}
+
+function flushOperation (intBuffer) {
+    if (previousOperator === '+') {
+        runningTotal += intBuffer;
+    } else if (previousOperator === '-') {
+        runningTotal -= intBuffer;
+    } else if (previousOperator === '×') {
+        runningTotal *= intBuffer;
+    } else {
+        runningTotal /= intBuffer;
     }
 }
 
