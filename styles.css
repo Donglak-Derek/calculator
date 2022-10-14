@@ -1,0 +1,105 @@
+/* global */
+* {
+    box-sizing: content-box;
+    margin: 0px;
+    padding: 0px;
+}
+input {
+    border: none;
+}
+
+.myform {
+    background-color: black;
+    margin: 0 50%;
+    display: grid;
+    gap: .1rem;
+    grid-template-areas: 
+    "calc calc calc calc"
+    "clean clean back division"
+    "seven eight nine times"
+    "four five six minus"
+    "one two three plus"
+    "zero zero zero equal";
+}
+
+#calc {
+    background-color: black;
+    color: white;
+    grid-area: calc;
+}
+
+.clearAll {
+    grid-area: clean;
+}
+
+.back {
+    grid-area: back;
+
+}
+
+.division {
+    grid-area: division;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.eight {
+    grid-area: eight;
+}
+
+.nine {
+    grid-area: nine;
+}
+
+.times {
+    grid-area: times;
+}
+.four {
+    grid-area: four;
+}
+
+.five {
+    grid-area: five;
+}
+
+.six {
+    grid-area: six;
+}
+
+.minus {
+    grid-area: minus;
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+.plus {
+    grid-area: plus;
+}
+
+.zero {
+    grid-area: zero;
+}
+
+.equal {
+    grid-area: equal;
+}
+
+.number {
+    background-color: #d8d9db;
+}
+
+.symbol {
+    background-color: #cf8c48;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <form name="myform" class="myform">
+            <!-- This is window for number user put it by clicking number pad-->
+            <input type="text" id="calc" name="answer">
+            <br>
+            <!-- Display key pads -->
+            <!-- onclick function by the user -->
+            <input type="button" value="c" class="number clearAll" onclick="clearAll()">
+            <input type="button" value="←" class="number back" onclick="back()">
+            <input type="button" value="÷" class="symbol division" onclick="writeNum('/')">
+            
+            <input type="button" value="7" class="number seven" onclick="writeNum(7)">
+            <input type="button" value="8" class="number eight" onclick="writeNum(8)">
+            <input type="button" value="9" class="number nine" onclick="writeNum(9)">
+            <input type="button" value="⨉" class="symbol times" onclick="writeNum('*')">
+            
+            <input type="button" value="4" class="number four" onclick="writeNum(4)">
+            <input type="button" value="5" class="number five" onclick="writeNum(5)">
+            <input type="button" value="6" class="number six" onclick="writeNum(6)">
+            <input type="button" value="-" class="symbol minus" onclick="writeNum('-')">
+
+            <input type="button" value="1" class="number one" onclick="writeNum(1)">
+            <input type="button" value="2" class="number two" onclick="writeNum(2)">
+            <input type="button" value="3" class="number three" onclick="writeNum(3)">
+            <input type="button" value="+" class="symbol plus" onclick="writeNum('+')">
+
+            <input type="button" value="0" class="number zero" onclick="writeNum(0)">
+            <input type="button" value="=" class="symbol equal" onclick="calculate()">
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
